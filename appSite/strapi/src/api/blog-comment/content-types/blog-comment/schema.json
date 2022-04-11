@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "blog_comments",
+  "info": {
+    "singularName": "blog-comment",
+    "pluralName": "blog-comments",
+    "displayName": "BlogComment",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "blog": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::blog.blog",
+      "inversedBy": "blog_comments"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
